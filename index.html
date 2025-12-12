@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arix Signature Tree</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
+
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000508; /* Deep midnight */
+        overflow: hidden;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+
+      .ui-layer {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        pointer-events: none;
+        text-align: center;
+      }
+
+      /* Luxury Button Styling */
+      .lux-btn {
+        pointer-events: auto;
+        background: rgba(0, 20, 10, 0.6);
+        border: 1px solid rgba(212, 175, 55, 0.4); /* Gold border */
+        color: #e6c288; /* Champagne gold */
+        padding: 14px 40px;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 15px rgba(0,0,0,0.5), inset 0 0 0px rgba(212, 175, 55, 0);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .lux-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+        transition: left 0.6s;
+      }
+
+      .lux-btn:hover {
+        background: rgba(0, 30, 15, 0.8);
+        border-color: rgba(212, 175, 55, 1);
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.15), inset 0 0 10px rgba(212, 175, 55, 0.1);
+        color: #fff;
+      }
+
+      .lux-btn:hover::before {
+        left: 100%;
+      }
+
+      .title-overlay {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #e6c288;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        text-align: center;
+        opacity: 0.8;
+        pointer-events: none;
+      }
+      .title-overlay h1 {
+        font-size: 2rem;
+        margin: 0;
+        font-weight: 400;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      }
+      .title-overlay p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin-top: 10px;
+        color: #8a9ba8;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.4.2",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.7.7",
+    "@react-three/postprocessing": "https://esm.sh/@react-three/postprocessing@^3.0.4",
+    "three": "https://esm.sh/three@^0.182.0",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
